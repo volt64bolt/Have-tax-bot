@@ -8,12 +8,13 @@
     <label for="UBal">User Balance:</label><br>
     <input type="text" id="UBal" name="UBal"><br>
     <label for="FCount">Franchise Count:</label><br>
-    <input type="text" id="FCount" name="FCount">
+    <input type="text" id="FCount" name="FCount"><br>
     <label for="SPercent">Stock Percent Change:</label><br>
-    <input type="text" id="SPercent" name="SPercent" value="5.71">
-    <input type="button" value="Calculate" onclick="calculateTax()">
+    <input type="text" id="SPercent" name="SPercent" value="5.71"><br><br>
+    <input type="button" value="Calculate" onclick="calculateTax()"><br>
   </form>
-  <p id="TaxOut"></p>
+  <p>Tax:</p>
+  <p id="TaxOut">0</p>
   <script>
     let UserBal, FranchiseCount, StockPercentChange, Tax;
     function calculateTax() {
@@ -21,7 +22,7 @@
       FranchiseCount = document.getElementById("FCount");
       StockPercentChange = document.getElementById("SPercent");
 
-      Tax = (UserBal/1000) * (50*FranchiseCount) * ( (StockPercentChange/100) * UserBal);
+      Tax = (UserBal.value/1000) * (50*FranchiseCount.value) * ( (StockPercentChange.value/100) * UserBal.value);
 
       document.getElementById("TaxOut").innerHTML = Tax;
     }
