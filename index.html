@@ -22,9 +22,9 @@
       FranchiseCount = document.getElementById("FCount");
       StockPercentChange = document.getElementById("SPercent");
 
-      Tax = (UserBal.value/1000) * (50*FranchiseCount.value) * ( (StockPercentChange.value/100) * UserBal.value);
+      Tax = (UserBal.value/1000) + (50*FranchiseCount.value) + ( (StockPercentChange.value/100) * UserBal.value);
 
-      document.getElementById("TaxOut").innerHTML = Tax;
+      document.getElementById("TaxOut").innerHTML = Tax.toFixed(0);
     }
   </script>
 </body>
